@@ -1,0 +1,35 @@
+{
+  "name": "@splytech-io/splyt-ws-message-handler",
+  "version": "0.0.1",
+  "description": "Splyt WebScoket Message Handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "splyt",
+    "websocket",
+    "message",
+    "handler"
+  ],
+  "author": "Andrius Skerla",
+  "license": "ISC",
+  "dependencies": {
+    "@rainder/callbacks": "^0.3.1",
+    "bson": "^0.5.6",
+    "co": "^4.6.0",
+    "lodash": "^4.16.6"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/splytech-io/node-splyt-ws-message-handler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/splytech-io/node-splyt-ws-message-handler/issues"
+  },
+  "homepage": "https://github.com/splytech-io/node-splyt-ws-message-handler#readme"
+}
