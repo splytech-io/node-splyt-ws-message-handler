@@ -1,6 +1,6 @@
 {
   "name": "@splytech-io/splyt-ws-message-handler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Splyt WebScoket Message Handler",
   "main": "index.js",
   "scripts": {
