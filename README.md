@@ -12,11 +12,11 @@ const SplytWSMessageHandler = require('@splytech-io/splyt-ws-message-handler');
 const ws = new WebSocket(...);
 
 const handler = new class extends SplytWSMessageHandler {
-  *onPush(method, data) {
+  async onPush(method, data) {
     //process push message
   }
   
-  *onRequest(method, data) { 
+  async onRequest(method, data) { 
     //process request message
     
     return /*response*/;
