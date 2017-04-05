@@ -10,32 +10,26 @@ const SplytWSMessageHandler = require('@splytech-io/splyt-ws-message-handler');
 
 //create websocket connection
 const ws = new WebSocket(...);
+const handler = new SplytWSMessageHandler();
 
-const handler = new class extends SplytWSMessageHandler {
-  async onPush(method, data) {
-    //process push message
-  }
-  
-  async onRequest(method, data) { 
-    //process request message
-    
-    return /*response*/;
-  }
-};
+ws.on('connect', (socket) => {
 
-ws.on('message', (message) => {
+  socket.on('message', (message) => {
+    //handle incoming push/request/response messages from the server
+    handler.incoming({
+      socket: socket,
+      incoming: new SplytWSMessageHandler.Incoming(message),
+    }).catch((err) => console.error(err));
+  });
 
-  //handle push/request/response messages from the server
-  handler.incoming(ws, message);
-  
-});
-
-ws.on('connect', () => {
-
-  //send request to the server and output the response
-  handlet.outgoing(ws, {
-    type: 'request',
-    method: 'passenger.config'
+  //send push/request/response to the client
+  handler.outgoing({
+    socket,
+    outgoing: new SplytWSMessageHandler.Outgoing({
+      type: 'request',
+      method: 'passenger.config',
+    }),
   }).then((result) => console.log(result));
-  
+
 });
+```
